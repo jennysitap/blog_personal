@@ -7,6 +7,13 @@ Route::get('/', function () {
 });
 Route::get("/contacto", function() {
     return view('contacto');
+});    
+Route::get("/post", function() {
+        return view('post');
 });
+Route::get("/about", function() {
+    return view('about');
+});
+
 
 
