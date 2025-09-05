@@ -13,7 +13,7 @@ class categories_seed extends Seeder
     public function run(): void
     {
         DB::table('categories')->insert([
-            "name"=>'Arboles',
+            "name"=>'Plantas',
             "img"=>"default.jpg",
             'created_at'=>date('Y-m-d h:m:s')
         ]);
