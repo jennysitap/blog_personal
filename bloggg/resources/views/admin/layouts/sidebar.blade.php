@@ -19,12 +19,12 @@
                     <span>Dashboard</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="/dashboard/posts">
                     <i class="fas fa-fw fa-list"></i>
                     <span>Posts</span></a>
             </li>            
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="/dashboard/sers">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Usuarios</span></a>
             </li>
