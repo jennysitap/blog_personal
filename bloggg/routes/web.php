@@ -20,8 +20,8 @@ Route::group(['prefix' => 'dashboard'], function(){
     Route::get("/", function() {
     return view('admin.dashboard');
     });
-    Route::get("/users",
-    [UsersController::class,'getUsers']);
+    Route::get("/users",[UsersController::class,'getUsers']);
+    Route::post("/users",[UsersController::class,'createUsers']);
 });
 
 
