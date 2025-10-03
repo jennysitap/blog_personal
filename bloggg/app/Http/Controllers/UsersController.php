@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+
 class UsersController extends Controller
+
 {
-    public function getUsers(){
+    public function getUsers (){
+        /*Select * From Users */
         $data = User::all();
         //dd($data);
         return view("admin.users")
@@ -15,25 +18,25 @@ class UsersController extends Controller
     }
     public function createUsers(Request $request){
         //dd($request->email);
-        $request->validate([
+        //Reglas de validadcion Users
+        $request->validate([   
             "name"=>'required|min:3',
-            "nickname"=>'required|min:3|unique:users,nickname',
+            "username"=>'required|min:3|unique:users,username',
             "email"=>'required|email|unique:users,email',
-            "password"=>'required|min:8',
-            "password2"=>'required|min:8|same:password',
+            "password"=>'required|min:4',
+            "password2"=>'required|min:4|same:password'
         ]);
-        //guardar registro
-        $user=new User ();
-        $user->name=$request->name;
-        $user->nickname=$request->nickname;
-        $user->password=Hash::make($request->password);
-        $user->email=$request->email;
-        $user->img="default.jpg";
-        $user->save();
-        //dd("Usuario insertado");
-        return redirect()
-        ->back()
-        ->with('success',"Usuario insertado correctamente");
 
+        //Guardar
+        $user = new User();
+        $user -> name=$request->name;
+        $user -> username=$request->username;
+        $user -> password=Hash::make($request->password);
+        $user -> email=$request->email;
+        $user -> img="default.jpg";
+        $user -> save();
+        return redirect()
+            ->back()
+            ->with('success',"Usuario insertado correctamente");
     }
 }
