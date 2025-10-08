@@ -21,14 +21,11 @@ Route::get("/about", function() {
 Route::group(['prefix' => 'dashboard'], function(){
     Route::resource('/',DashboardController::class);
     Route::resource('/posts',PostsController::class);
-    Route::resource('/posts/actions/add',[PostsController::class,'showAdd']);
+    Route::get('/posts/actions/add',[PostsController::class,'showAdd']);
 
     Route::get("/users",[UsersController::class,'getUsers']);
     Route::post("/users",[UsersController::class,'createUsers']);
 });
-
-
-
 
 
 

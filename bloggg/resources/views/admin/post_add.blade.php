@@ -1,4 +1,4 @@
-@extends('admin.layous.main')
+@extends('admin.layouts.main')
 @section('contenido')
 <h1>Agregar Post</h1>
 <div id="editor">
@@ -13,4 +13,4 @@
     theme: 'snow'
   });
 </script>
-@endsectionscripts
+@endsection
