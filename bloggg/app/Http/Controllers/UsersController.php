@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Hash;
 class UsersController extends Controller
 
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function getUsers (){
         /*Select * From Users */
         $data = User::all();
@@ -21,7 +24,7 @@ class UsersController extends Controller
         //Reglas de validadcion Users
         $request->validate([   
             "name"=>'required|min:3',
-            "username"=>'required|min:3|unique:users,username',
+            "username"=>'required|min:3|unique:users,nickname',
             "email"=>'required|email|unique:users,email',
             "password"=>'required|min:4',
             "password2"=>'required|min:4|same:password'
@@ -30,7 +33,7 @@ class UsersController extends Controller
         //Guardar
         $user = new User();
         $user -> name=$request->name;
-        $user -> username=$request->username;
+        $user -> nickname=$request->username;
         $user -> password=Hash::make($request->password);
         $user -> email=$request->email;
         $user -> img="default.jpg";

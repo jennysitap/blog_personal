@@ -52,7 +52,7 @@
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Password"
-                                                name="passwod"
+                                                name="password"
                                                 >
                                         </div>
                                         <div class="form-group">

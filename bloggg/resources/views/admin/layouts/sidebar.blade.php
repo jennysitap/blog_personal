@@ -24,7 +24,7 @@
                     <span>Posts</span></a>
             </li>            
             <li class="nav-item">
-                <a class="nav-link" href="/dashboard/sers">
+                <a class="nav-link" href="/dashboard/users">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Usuarios</span></a>
             </li>
